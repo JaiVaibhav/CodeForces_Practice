@@ -1,0 +1,37 @@
+#include <iostream>
+#include <bits/stdc++.h>
+using namespace std;
+
+int main()
+{
+    int q;
+    cin>>q;
+    while(q--)
+    {
+        int x1,y1,x2,y2;
+        cin>>x1>>y1>>x2>>y2;
+        int r;
+        cin>>r;
+        int a,b,c,m,d;
+        
+        b=(x2-x1);
+        a=(y2-y1);
+        c= b*y1 - a*x1;
+       d = c/sqrt(a*a+b*b);
+        d=d<0?(-1)*d:d;
+        if((d)<r)
+        {
+            cout<<"REPLANNING"<<endl;
+        } 
+        else if(d==r)
+        {
+            cout<<"JUST MISSED"<<endl;
+        }
+        else{
+            cout<<"SAFE"<<endl;
+        }
+
+    }
+
+    return 0;
+}
